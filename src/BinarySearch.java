@@ -23,6 +23,19 @@ public class BinarySearch {
         return found;
     }
 
+
+    /**
+     * Main method which calls aux method to use Divide and Conquer algorithm.
+     * With i0=0 and iN = array.lenth-1 we are first looking for the element in all the original array.
+     * This is the header we are asked for when solving this problem.
+     * @param array
+     * @param element
+     * @return Returns whether the element was found or not in the given original array.
+     */
+    public boolean containsElement(int[] array, int element) {
+        return containsAux(array, 0, array.length-1, element);
+    }
+
     /**
      * Auxiliar recursive method that implements Divide and Conquer algorithm.
      * Algorithmic complexity Θ(Log N)
@@ -45,19 +58,6 @@ public class BinarySearch {
                 return containsAux(array, k+1, iN, element);
         }
     }
-
-    /**
-     * Main method which calls aux method to use Divide and Conquer algorithm.
-     * With i0=0 and iN = array.lenth-1 we are first looking for the element in all the original array.
-     * This is the header we are asked for when solving this problem.
-     * @param array
-     * @param element
-     * @return Returns whether the element was found or not in the given original array.
-     */
-    public boolean containsElement(int[] array, int element) {
-        return containsAux(array, 0, array.length-1, element);
-    }
-
 
     /**
      * Testing in main the BinarySearch algorithms.
